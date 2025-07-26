@@ -1,15 +1,14 @@
 workflows:
-  expo-app:
+  build-app:
     name: Build Expo Android App
     environment:
       node: latest
-      expo-cli: latest
     scripts:
       - npm install
-      - expo install
-      - expo build:android --non-interactive
+      - npx expo install
+      - npx expo export
     artifacts:
-      - build/**/*.apk
+      - dist/**
     publishing:
       email:
         recipients:
