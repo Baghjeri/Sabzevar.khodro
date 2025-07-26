@@ -1,0 +1,16 @@
+workflows:
+  expo-app:
+    name: Build Expo Android App
+    environment:
+      node: latest
+      expo-cli: latest
+    scripts:
+      - npm install
+      - expo install
+      - expo build:android --non-interactive
+    artifacts:
+      - build/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - hamidr984@gmail.com
