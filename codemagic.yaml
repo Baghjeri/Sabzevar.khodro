@@ -6,7 +6,7 @@ workflows:
     scripts:
       - npm install
       - npx expo install
-      - npx expo prebuild
+      - npx expo prebuild --platform android
       - npx expo build:android -t apk
     artifacts:
       - android/app/build/outputs/**/*.apk
