@@ -1,13 +1,13 @@
 workflows:
   android-build:
-    name: Build Expo Android App
+    name: Build Expo Android App (EAS)
     environment:
       node: latest
     scripts:
       - npm install
       - npx expo install
       - npx expo prebuild --platform android
-      - npx expo build:android -t apk
+      - npx eas-cli build -p android --profile preview
     artifacts:
       - android/app/build/outputs/**/*.apk
     publishing:
