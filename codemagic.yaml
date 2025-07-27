@@ -3,15 +3,16 @@ workflows:
     name: Build Expo Android App (EAS)
     environment:
       node: latest
-      groups:
-        - Iman   # این اسم گروهیه که بالا ساختی
+      vars:
+        EXPO_TOKEN: $EXPO_TOKEN # توکن Expo از Codemagic Environment
     scripts:
       - npm install
       - npx expo install
       - npx expo prebuild --platform android
-      - npx eas-cli build -p android --profile preview
+      - npx eas-cli build --platform android --profile production --non-interactive
     artifacts:
       - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
     publishing:
       email:
         recipients:
