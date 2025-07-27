@@ -3,6 +3,8 @@ workflows:
     name: Build Expo Android App (EAS)
     environment:
       node: latest
+      vars:
+        EXPO_TOKEN: $EXPO_TOKEN   # اینجا توکن Expo رو به محیط اضافه می‌کنیم
     scripts:
       - npm install
       - npx expo install
