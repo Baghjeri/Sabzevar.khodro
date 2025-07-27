@@ -1,11 +1,10 @@
-{
-  "expo": {
-    "name": "Sabzevar",
-    "slug": "sabzevar",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+import React from 'react';
+import { Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Hello Sabzevar!</Text>
+    </View>
+  );
 }
